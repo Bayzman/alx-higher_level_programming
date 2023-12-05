@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if (sentence == ''):
-        length = 0
+    if (sentence == ""):
+        length = len(sentence)
         first = None
         print("Length: {} - First character: {}".format(length, first))
 
