@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
+    if (matrix=[]):
+        return matrix
+
     new_matrix = [[0 for _ in range(len(matrix[0]))] \
                   for _ in range(len(matrix))]
 
