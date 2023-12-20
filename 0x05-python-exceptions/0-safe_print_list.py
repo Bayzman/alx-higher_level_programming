@@ -2,14 +2,14 @@
 def safe_print_list(my_list=[], x=0):
     elements = 0
 
-    for i in range(x):
-        try:
+    try:
+        for i in range(x):
             print("{}".format(my_list[i]), end='')
             elements += 1
 
-        except IndexError:
-            break
+    except IndexError:
+        pass
 
-        finally:
-            print('')
-            return (elements)
+    finally:
+        print('')
+        return (elements)
