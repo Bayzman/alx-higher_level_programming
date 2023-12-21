@@ -11,7 +11,18 @@ class Square:
     def __init__(self, size=0):
         ''' Class initialization
         '''
+        self.__size = size
 
+    @property
+    def size(self):
+        ''' Property decorator to get the size attribute
+        '''
+        return self.__size
+
+    @size.setter
+    def size(self, size):
+        ''' Property decorator to set the size attribute
+        '''
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
         if size < 0:
