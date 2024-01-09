@@ -91,3 +91,17 @@ case 9: Different data type
 >>> a_list.append(92.5)
 >>> a_list
 [5, 'Yay', 92.5]
+
+--------------------------------
+
+case 10: negative numbers
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(500)
+>>> my_list.append(100)
+>>> my_list.append(-10)
+>>> my_list.append(58)
+>>> my_list.append(-50)
+>>> my_list.print_sorted()
+[-50, -10, 58, 100, 500]
