@@ -75,9 +75,19 @@ case 7: same number
 
 --------------------------------
 
-case 4: empty list
+case 8: empty list
 
 >>> a_list = []
 >>> my_list = MyList(a_list)
 >>> my_list.print_sorted()
 []
+
+--------------------------------
+
+case 9: Different data type
+>>> a_list = MyList()
+>>> a_list.append(5)
+>>> a_list.append("Yay")
+>>> a_list.append(92.5)
+>>> a_list
+[5, 'Yay', 92.5]
