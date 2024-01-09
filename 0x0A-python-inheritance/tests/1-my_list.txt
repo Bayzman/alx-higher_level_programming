@@ -2,10 +2,16 @@
 
 --------------------------------
 
+case 0: import
+>>> MyList = __import__('1-my_list').MyList
+
+-------------------------------------------
+
 case 1: print sorted list
 >>> a_list = [23, 67, 1, 8, 9, 2, 5]
 >>> my_list = MyList(a_list)
 >>> my_list.print_sorted()
+[1, 2, 5, 8, 9, 23, 67]
 
 --------------------------------
 
@@ -30,6 +36,7 @@ case 4: count the number of occurrence of x
 >>> a_list = [23, 67, 1, 8, 9, 2, 5]
 >>> my_list = MyList(a_list)
 >>> my_list.count(8)
+1
 
 --------------------------------
 
