@@ -115,3 +115,12 @@ case 11: undefined object
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 NameError: name 'b_list' is not defined
+
+--------------------------------
+
+case 12: unique number
+
+>>> c_list = MyList()
+>>> c_list.append(5000)
+>>> print(c_list)
+[5000]
