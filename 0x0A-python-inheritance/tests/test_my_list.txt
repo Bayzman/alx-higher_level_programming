@@ -1,0 +1,29 @@
+''' Test cases for 1-my_list.py '''
+
+case 1: print sorted list
+>>> a_list = [23, 67, 1, 8, 9, 2, 5]
+>>> my_list = MyList(a_list)
+>>> my_list.print_sorted()
+
+case 2: append values to a list
+>>> a_list = [23, 67, 1, 8, 9, 2, 5]
+>>> my_list = MyList(a_list)
+>>> my_list.append(87)
+>>> my_list.append(92)
+>>> my_list.append(500)
+>>> my_list.append(29)
+
+case 3: copy list
+>>> a_list = [23, 67, 1, 8, 9, 2, 5]
+>>> my_list = MyList(a_list)
+>>> my_list2 = my_list.copy()
+
+case 4: count the number of occurrence of x
+>>> a_list = [23, 67, 1, 8, 9, 2, 5]
+>>> my_list = MyList(a_list)
+>>> my_list.count(8)
+
+case 5: reverse list
+>>> a_list = [23, 67, 1, 8, 9, 2, 5]
+>>> my_list = MyList(a_list)
+>>> my_list.reverse()
