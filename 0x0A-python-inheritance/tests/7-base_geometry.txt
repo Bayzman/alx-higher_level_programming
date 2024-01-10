@@ -19,6 +19,12 @@ Traceback (most recent call last):
   ...
 ValueError: age must be greater than 0
 
+# ValueError
+>>> bg.integer_validator('area', -50)
+Traceback (most recent call last):
+  ...
+ValueError: area must be greater than 0
+
 
 # TypeError
 >>> bg.integer_validator('height', 'tall')
@@ -27,8 +33,10 @@ Traceback (most recent call last):
 TypeError: height must be an integer
 
 
-# Valid inputs
+# Valid input
 >>> bg.integer_validator('length', 5)
+
+# Valid input
 >>> bg.integer_validator('breadth', 5)
 
 
@@ -37,3 +45,9 @@ TypeError: height must be an integer
 Traceback (most recent call last):
   ...
 ValueError: height must be greater than 0
+
+# ValueError
+>>> bg.integer_validator('population', 0)
+Traceback (most recent call last):
+  ...
+ValueError: population must be greater than 0
