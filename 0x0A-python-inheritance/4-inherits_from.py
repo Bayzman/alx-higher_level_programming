@@ -7,7 +7,8 @@
 def inherits_from(obj, a_class):
     ''' Checks if an object is an instance of a class '''
 
-    if (type(obj) != a_class):
-        return issubclass(type(obj), a_class)
+    obj_type = type(obj)
+    if (obj_type != a_class):
+        return issubclass(obj_type, a_class)
     else:
-        pass
+        return False
