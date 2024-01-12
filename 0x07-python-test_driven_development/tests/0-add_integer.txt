@@ -1,0 +1,39 @@
+# Import module and function
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Case 1: add 2 positive integers
+>>> add_integer(4, 9)
+13
+
+# Case 2: add 2 floats
+>>> add_integer(4.0, 9.7)
+13
+
+# Case 3: add 2 floats
+>>> add_integer(4.5, 5.5)
+9
+
+# Case 4: add int and float
+>>> add_integer(4, 5.9)
+9
+
+# Case 5: add negative int
+>>> add_integer(-4, 2)
+-2
+
+# Case 6: give only one input value
+>>> add_integer(-4)
+94
+
+# Case 7: add wrong data types
+>>> add_integer(5, 'hello')
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Case 8: add wrong data types
+>>> add_integer('hi', 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
