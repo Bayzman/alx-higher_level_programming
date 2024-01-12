@@ -45,6 +45,13 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer(test_param)
         self.assertEqual(result, None)
 
+    def test_max_int_mid(self):
+        """ Testing the function for max integer
+        """
+        test_param = [19, 500, 450]
+        result = max_integer(test_param)
+        self.assertEqual(result, 500)
+
 
 if __name__ == "__main__":
     unittest.main()
