@@ -7,7 +7,10 @@
 >>> text_indent("Hello, welcome to Alx. Smile :) Why?")
 Hello, welcome to Alx.
 <BLANKLINE>
-Smile :) Why?
+Smile :
+<BLANKLINE>
+) Why?
+<BLANKLINE>
 
 # Case 2
 >>> text_indent({'age': 123, 'car': 'BMW'})
@@ -35,7 +38,9 @@ TypeError: text must be a string
 
 # Case 6
 >>> text_indent('google.com')
-google.com
+google.
+<BLANKLINE>
+com
 
 # Case 7
 >>> text_indent('Perfect text!')
