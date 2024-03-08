@@ -26,6 +26,6 @@ def text_indentation(text):
         count += 1
         if (strip_line and count < len(lines)):
             print(strip_line)
-            print()
+            print('')
         else:
             print(strip_line, end='')
