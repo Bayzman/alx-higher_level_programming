@@ -15,7 +15,7 @@ def text_indentation(text):
     characters = ['.', '?', ':']
 
     for i in characters:
-        text = text.replace(i, i + '\n')
+        text = text.replace(i + '', i + '\n')
 
     lines = text.split('\n')
 
