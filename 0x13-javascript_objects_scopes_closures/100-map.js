@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+const list = require('./100-data.js').list;
+
+const newList = list.map((element, index) => element * index);
+console.log(list);
+console.log(newList);
