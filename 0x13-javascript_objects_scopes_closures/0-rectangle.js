@@ -1,5 +1,7 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
-class Rectangle {};
+class Rectangle {
+    constructor () {}
+}
 
 module.exports = Rectangle;
