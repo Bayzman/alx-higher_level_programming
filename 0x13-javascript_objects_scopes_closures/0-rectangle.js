@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-class Rectangle {
-    
-}
+class Rectangle {};
 
 module.exports = Rectangle;
