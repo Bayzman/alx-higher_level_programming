@@ -5,7 +5,7 @@ import requests
 
 
 def main():
-    """Python script that fetches https://intranet.hbtn.io/status
+    """ Main function
     """
     response = requests.get('https://intranet.hbtn.io/status')
     print("Body response:")
