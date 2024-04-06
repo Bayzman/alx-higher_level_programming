@@ -1,0 +1,47 @@
+# Test cases for text_indentation function
+
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+>>> text_indentation('www.google.com')
+www.
+<BLANKLINE>
+google.
+<BLANKLINE>
+com
+
+
+>>> text_indentation('https://gtbank.com')
+https:
+<BLANKLINE>
+//gtbank.
+<BLANKLINE>
+com
+
+
+>>> text_indentation('What\'s your name?')
+What's your name?
+<BLANKLINE>
+
+ 
+>>> text_indentation('Welcome to ALX SE Program')
+Welcome to ALX SE Program
+
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
+
+
+>>> text_indentation()
+Traceback (most recent call last):
+  ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+  ...
+TypeError: text must be a string
