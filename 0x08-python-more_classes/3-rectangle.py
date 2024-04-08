@@ -53,7 +53,7 @@ class Rectangle():
         """ Prints rectangles using the # symbol """
         symbol = ''
         if (self.__width == 0 or self.__height == 0):
-            return
+            return ''
         for i in range(self.__height):
             symbol += ('#' * self.__width)
             if (i != (self.__height - 1)):
