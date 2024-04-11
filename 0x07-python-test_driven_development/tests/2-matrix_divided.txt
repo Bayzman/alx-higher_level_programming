@@ -34,3 +34,19 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided([[1,2,3]], float('inf'))
 [[0.0, 0.0, 0.0]]
+
+>>> print(matrix_divided(matrix))
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> print(matrix_divided())
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix2 = [[9, 2],[83, 73, 43]]
+>>> print(matrix_divided(matrix2, 3))
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
