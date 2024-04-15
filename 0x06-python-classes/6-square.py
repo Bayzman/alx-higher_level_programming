@@ -38,9 +38,12 @@ class Square:
     def position(self, value):
         """ Decorator to set the position attribute
         """
-        if type(value) != tuple or len(value) != 2 or \
+        if not isinstance(value, tuple) or len(value) != 2 \
+           or all([not isinstance(i, int) for i in value]) \
+           or all([i >= 0 for i in value]):
+        """ if type(value) != tuple or len(value) != 2 or \
            not all([type(i) == int for i in value]) or \
-           not all([i >= 0 for i in value]):
+           not all([i >= 0 for i in value]):"""
             raise TypeError('position must be a tuple of 2 positive integers')
         self.__position = value
 
