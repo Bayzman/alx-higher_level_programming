@@ -1,29 +1,27 @@
 #!/usr/bin/python3
 
-''' Experimenting with classes
-'''
+""" Experimenting with classes
+"""
 
 
 class Square:
-    ''' Square class
-    '''
+    """ Square class """
 
-    def __init__(self, size=0, position=(0,0)):
-        ''' Class initialization
-        '''
+    def __init__(self, size=0, position=(0, 0)):
+        """ Class initialization """
         self.__size = size
         self.position = position
 
     @property
     def size(self):
-        ''' Property decorator to get the size attribute
-        '''
+        """ Property decorator to get the size attribute
+        """
         return self.__size
 
     @size.setter
     def size(self, size):
-        ''' Property decorator to set the size attribute
-        '''
+        """ Property decorator to set the size attribute
+        """
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
         if size < 0:
@@ -32,14 +30,14 @@ class Square:
 
     @property
     def position(self):
-        ''' Decorator to get the position attribute
-        '''
+        """ Decorator to get the position attribute
+        """
         return self.__position
 
     @position.setter
     def position(self, value):
-        ''' Decorator to set the position attribute
-        '''
+        """ Decorator to set the position attribute
+        """
         if type(value) != tuple or len(value) != 2 or \
            not all([type(i) == int for i in value]) or \
            not all([i >= 0 for i in value]):
@@ -47,13 +45,13 @@ class Square:
         self.__position = value
 
     def area(self):
-        ''' Method to compute the area of a square
-        '''
+        """ Method to compute the area of a square
+        """
         return self.__size * self.__size
 
     def my_print(self):
-        ''' Print a square
-        '''
+        """ Print a square
+        """
         if (self.__size == 0):
             print('')
         for i in range(self.__size):
