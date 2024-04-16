@@ -17,4 +17,4 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Overwrites the print statement """
-        return (f'[Square] {self._Square__size:d}/self._Square__size:d}')
+        return (f'[Square] {self.__size:d}/{self.__size:d}')
