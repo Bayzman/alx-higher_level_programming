@@ -15,7 +15,7 @@ def pascal_triangle(n):
     if n == 1:
         return [[1]]
 
-    triangle = []
+    triagle = []
     for i in range(n):
         row = [1]
 
