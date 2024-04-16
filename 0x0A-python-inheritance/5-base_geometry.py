@@ -3,6 +3,6 @@
 """ Empty class """
 
 
-def BaseGeometry():
+class BaseGeometry:
     """ Empty class """
     pass
