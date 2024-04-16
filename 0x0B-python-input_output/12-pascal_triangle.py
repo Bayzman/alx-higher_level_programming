@@ -1,4 +1,4 @@
-#/!/usr/bin/python3
+#!/usr/bin/python3
 
 """ Returns a list of lists of integers representing the
     Pascal's triangle of n
@@ -15,7 +15,7 @@ def pascal_triangle(n):
     if n == 1:
         return [[1]]
 
-    triagle = []
+    triangle = []
     for i in range(n):
         row = [1]
 
