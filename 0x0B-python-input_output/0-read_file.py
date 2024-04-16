@@ -4,7 +4,7 @@
 """
 
 
-def read_file(filename="") -> None:
+def read_file(filename=""):
     """ Reads a text file
     """
     with open(filename, "r") as f:
