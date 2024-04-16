@@ -14,3 +14,7 @@ class Square(Rectangle):
         self.integer_validator('size', size)
         super().__init__(size, size)
         self.__size = size
+
+    def __str__(self):
+        """ Overwrites the print statement """
+        return (f'[Square] {self._Square__size:d}/self._Square__size:d}')
