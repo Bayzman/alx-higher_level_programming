@@ -22,8 +22,8 @@ class Student:
     def to_json(self, attrs=None) -> dict:
         """ Retrieves dictionary representation
         """
-        if (type(attrs) == list and
-            all(type(item) == str for item in attrs)):
+        if (isinstance(attrs, list) and all(isinstance(item, str)
+                                        for item in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
 
         return self.__dict__
