@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 """ Rectangle class inherits from Base """
+from base import Base
 
 
 class Rectangle(Base):
