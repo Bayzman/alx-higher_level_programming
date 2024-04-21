@@ -87,3 +87,21 @@ class Rectangle(Base):
         """ Overwrite the __str__ method """
         out = f'[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}'
         return out
+
+    def update(self, *args, **kwargs):
+        """ Supports no-keyword and key-worded arguments """
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        else:
+            for i in range(len(args)):
+                if (i == 0):
+                    self.id = args[0]
+                elif (i == 1):
+                    self.width = args[1]
+                elif (i == 2):
+                    self.height = args[2]
+                elif (i == 3):
+                    self.x = args[3]
+                elif (i == 4):
+                    self.y = args[4]
