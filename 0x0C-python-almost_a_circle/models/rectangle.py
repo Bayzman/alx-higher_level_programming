@@ -105,3 +105,9 @@ class Rectangle(Base):
                     self.x = args[3]
                 elif (i == 4):
                     self.y = args[4]
+
+    def to_dictionary(self):
+        """ Returns dictionary representation of a rectangle instance """
+        to_dict = dict(x=self.x, y=self.y, id=self.id,
+                       height=self.height, width=self.width)
+        return to_dict
