@@ -24,23 +24,18 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ Updates the class attributes """
-        if len(args) == 0:
+        if args:
+            attributes = ["id", "size", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+
+        else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-        else:
-            for i in range(len(args)):
-                if (i == 0):
-                    self.id = args[0]
-                elif (i == 1):
-                    self.size = args[1]
-                elif (i == 2):
-                    self.x = args[2]
-                elif (i == 3):
-                    self.y = args[3]
 
     def __str__(self):
         """ Overwrites the print method """
-        out = f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}'
+        out = f'[Square] ({self.id}) {self.x}/{self.y} - {self.size}'
         return out
 
     def to_dictionary(self):
