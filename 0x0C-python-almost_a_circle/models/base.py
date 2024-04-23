@@ -48,18 +48,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Creates a new instance from a dictionary """
-        # Create dummy instance
-        new_instance = cls()
-        new_instance.update(**dictionary)
+        if dictionary != {}:
+            # check if class is rectangle
+            if cls.__name__ == 'Rectangle':
+                # Create dummy rectangle instance
+                new_instance = cls(4, 6)
+            else:
+                # Create dummy square instance
+                new_instance = cls(4)
+            new_instance.update(**dictionary)
 
-        return new_instance
-
-    def update(self, *args, **kwargs):
-        """ updates instances of the class """
-        if args:
-            attributes = ['id', 'width', 'height', 'x', 'y']
-            for loop, arg in enumerate(args):
-                setattr(self, attributes[loop], arg)
-        elif kwargs:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            return new_instance
