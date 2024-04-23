@@ -86,7 +86,7 @@ class Rectangle(Base):
     def __str__(self):
         """ Overwrite the __str__ method """
         out = f'[Rectangle] ({self.id}) {self.x}/{self.y} - \
-                {self.width}/{self.height}'
+{self.width}/{self.height}'
         return out
 
     def update(self, *args, **kwargs):
