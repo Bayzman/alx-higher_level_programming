@@ -81,7 +81,7 @@ class Base:
                 f.write('[]')
             else:
                 if cls.__name__ == 'Rectangle':
-                    fieldnames = ['width', 'height', 'x', 'y', 'id']
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -94,7 +94,7 @@ class Base:
         try:
             with open(filename, 'r') as f:
                 if cls.__name__ == 'Rectangle':
-                    fieldnames = ['width', 'height', 'x', 'y', 'id']
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
                 dict_list = csv.DictReader(f, fieldnames=fieldnames)
