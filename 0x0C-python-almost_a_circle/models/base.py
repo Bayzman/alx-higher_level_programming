@@ -37,3 +37,29 @@ class Base:
                 for obj in list_objs:
                     dict_list.append(obj.to_dictionary())
                 f.write(Base.to_json_string(dict_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Returns a list of JSON string representation """
+        if json_string is None or json_string == '[]':
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Creates a new instance from a dictionary """
+        # Create dummy instance
+        new_instance = cls()
+        new_instance.update(**dictionary)
+
+        return new_instance
+
+    def update(self, *args, **kwargs):
+        """ updates instances of the class """
+        if args:
+            attributes = ['id', 'width', 'height', 'x', 'y']
+            for loop, arg in enumerate(args):
+                setattr(self, attributes[loop], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
