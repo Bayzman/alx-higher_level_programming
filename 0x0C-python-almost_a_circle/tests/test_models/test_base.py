@@ -8,35 +8,33 @@ from models.base import Base
 class TestBase_1st(unittest.TestCase):
     def setUp(self):
         """ Setup method """
-        b = Base()
+        self.b = Base()
+        self.b1 = Base()
+        self.b2 = Base()
         print("Testing Base")
 
     def test_no_param_1_instance(self):
         """ Test with no parameters """
-        b = Base()
-        self.assertEqual(b.id, 6)
+        self.assertEqual(self.b.id, 1)
 
     def test_no_param_3_instances(self):
         """ Test multiple instances """
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b2.id, 9)
+        self.assertEqual(self.b2.id, 3)
 
     def test_with_param(self):
         """ Test with parameter """
-        b1 = Base(3)
-        self.assertEqual(b1.id, 3)
+        self.b1 = Base(3)
+        self.assertEqual(self.b1.id, 3)
 
     def test_none_param(self):
         """ Test with None """
-        b1 = Base(None)
+        self.b1 = Base(None)
         self.assertEqual(b1.id, 11)
 
     def test_assign_new_id(self):
         """ Assign new id """
-        b2 = Base()
-        b2.id = 6
-        self.assertEqual(b2.id, 6)
+        self.b2.id = 6
+        self.assertEqual(self.b2.id, 6)
 
     def test_bool_param(self):
         """ Test with boolean parameter """
