@@ -11,7 +11,7 @@ class TestBase(unittest.TestCase):
     b2 = Base()
     b3 = Base()
 
-    def test_no_param_1_instance(self):
+    def test_no_param(self):
         """ Test with no parameters """
         self.assertEqual(self.b1.id, 1)
         # b2.id should be 2 but because it has been assigned to 6
@@ -41,8 +41,13 @@ class TestBase(unittest.TestCase):
 
     def test_isisnstance(self):
         """ Check for instances """
-        b5 = Base(5)
-        self.assertIsInstance(b5, Base)
+        b7 = Base(5)
+        self.assertIsInstance(b7, Base)
+
+    def test_negative_param(self):
+        """ Test negative parameter """
+        b8 = Base(-45)
+        self.assertEqual(b8.id, -45)
 
     def test_privacy(self):
         """ Check privacy of class object """
