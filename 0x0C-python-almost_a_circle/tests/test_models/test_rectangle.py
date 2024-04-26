@@ -12,23 +12,39 @@ class TestRectangle_1st(unittest.TestCase):
 
     def test_width(self):
         """ Test width """
-        r1 = Rectangle(4, 5)
-        self.assertEqual(r1.width, 4)
+        r = Rectangle(4, 5)
+        self.assertEqual(r.width, 4)
 
     def test_height(self):
         """ Test height """
-        r1 = Rectangle(4, 5)
-        self.assertEqual(r1.height, 5)
+        r = Rectangle(4, 5)
+        self.assertEqual(r.height, 5)
 
-    def test_no_param(self):
-        """ Test no parameter """
-        with self.assertRaises(TypeError):
-            r2 = Rectangle()
+    def test_2_param(self):
+        """ Test two parameters """
+        r = Rectangle(3, 4)
+        self.assertIsInstance(r, Rectangle)
 
-    def test_1_param(self):
-        """ Test one parameter """
+    def test_3_param(self):
+        """ Test three parameters """
+        r = Rectangle(3, 4, 5)
+        self.assertIsInstance(r, Rectangle)
+
+    def test_4_param(self):
+        """ Test four parameters """
+        r = Rectangle(3, 4, 5, 10)
+        self.assertIsInstance(r, Rectangle)
+
+    def test_wrong_type(self):
+        """ Check for correct data types """
         with self.assertRaises(TypeError):
-            r2 = Rectangle(3)
+            r1 = Rectangle("1", 2)
+        with self.assertRaises(TypeError):
+            r2 = Rectangle(1, "2")
+        with self.assertRaises(TypeError):
+            r3 = Rectangle(1, 2, "3")
+        with self.assertRaises(TypeError):
+            r4 = Rectangle(1, 2, 3, "4")
 
     def test_rect_from_base(self):
         """ Check for instances """
