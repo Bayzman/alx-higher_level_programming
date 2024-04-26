@@ -28,7 +28,7 @@ class TestRectangle_1st(unittest.TestCase):
         r = Rectangle(3, 4, 5, 10)
         self.assertIsInstance(r, Rectangle)
 
-    def test_wrong_type(self):
+    def test_type_exceptions(self):
         """ Check for correct data types """
         with self.assertRaises(TypeError):
             r1 = Rectangle("1", 2)
@@ -39,14 +39,25 @@ class TestRectangle_1st(unittest.TestCase):
         with self.assertRaises(TypeError):
             r4 = Rectangle(1, 2, 3, "4")
 
+    def test_value_exceptions(self):
+        """ Value exceptions """
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r2 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(1, 2, 3, -4)
+
     def test_rect_from_base(self):
         """ Check for instances """
         self.assertIsInstance(Rectangle(4, 5), Base)
 
-    def test_x(self):
+    def test_area(self):
         """ Test x """
         r2 = Rectangle(4, 5)
-        self.assertEqual(r2.x, 0)
+        self.assertEqual(r2.area(), 20)
 
     def test_x_2(self):
         """ Test x again """
