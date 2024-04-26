@@ -6,18 +6,11 @@ from models.base import Base
 
 
 class TestRectangle_1st(unittest.TestCase):
-    def setUp(self):
-        """ Setup method """
-        print("Testing Rectangle")
-
-    def test_width(self):
-        """ Test width """
+    """ Test cases """
+    def test_width_height(self):
+        """ Test parameters """
         r = Rectangle(4, 5)
         self.assertEqual(r.width, 4)
-
-    def test_height(self):
-        """ Test height """
-        r = Rectangle(4, 5)
         self.assertEqual(r.height, 5)
 
     def test_2_param(self):
