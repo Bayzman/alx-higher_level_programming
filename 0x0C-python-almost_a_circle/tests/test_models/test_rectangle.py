@@ -13,13 +13,6 @@ class TestRectangle_1st(unittest.TestCase):
         self.assertEqual(r.width, 4)
         self.assertEqual(r.height, 5)
 
-    def test_update(self):
-        """ Test update method """
-        r = Rectangle(1, 2)
-        r.update(10, 15)
-        self.assertEqual(r.width, 10)
-        self.assertEqual(r.height, 15)
-
     def test_2_param(self):
         """ Test two parameters """
         r = Rectangle(3, 4)
@@ -35,27 +28,52 @@ class TestRectangle_1st(unittest.TestCase):
         r = Rectangle(3, 4, 5, 10)
         self.assertIsInstance(r, Rectangle)
 
-    def test_type_exceptions(self):
+    def test_type_exception1(self):
         """ Check for correct data types """
         with self.assertRaises(TypeError):
             r1 = Rectangle("1", 2)
+
+    def test_type_exception2(self):
+        """ Check for correct data types """
         with self.assertRaises(TypeError):
             r2 = Rectangle(1, "2")
+
+    def test_type_exception3(self):
+        """ Check for correct data types """
         with self.assertRaises(TypeError):
             r3 = Rectangle(1, 2, "3")
+
+    def test_type_exception4(self):
+        """ Check for correct data types """
         with self.assertRaises(TypeError):
             r4 = Rectangle(1, 2, 3, "4")
 
-    def test_value_exceptions(self):
-        """ Value exceptions """
+    def test_value_exception1(self):
+        """ Value Error """
         with self.assertRaises(ValueError):
             r1 = Rectangle(-1, 2)
+
+    def test_value_exception2(self):
+        """ Value Error """
         with self.assertRaises(ValueError):
             r2 = Rectangle(1, -2)
+
+    def test_value_exception3(self):
+        """ Value Error """
         with self.assertRaises(ValueError):
             r3 = Rectangle(1, 2, -3)
+
+    def test_value_exception4(self):
+        """ Value Error """
         with self.assertRaises(ValueError):
             r4 = Rectangle(1, 2, 3, -4)
+
+    def test_update(self):
+        """ Test update method """
+        r = Rectangle(1, 2)
+        r.update(10, 15)
+        self.assertEqual(r.width, 10)
+        self.assertEqual(r.height, 15)
 
     def test_rect_from_base(self):
         """ Check for instances """
