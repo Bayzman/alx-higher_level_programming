@@ -33,8 +33,8 @@ class TestSquare(unittest.TestCase):
         """ Test update """
         self.square.update(89, 2, 3)
         self.assertEqual(self.square.id, 89)
-        self.assertEqual(self.square.x, 2)
-        self.assertEqual(self.square.y, 3)
+        self.assertEqual(self.square.x, 3)
+        self.assertEqual(self.square.y, 1)
 
     def test_update_kwargs(self):
         """ Test kwargs """
