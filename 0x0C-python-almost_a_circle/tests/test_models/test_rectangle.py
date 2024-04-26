@@ -96,31 +96,84 @@ class TestRectangle_1st(unittest.TestCase):
     def test_all_param(self):
         """ Test all parameters """
         r2 = Rectangle(4, 5, 7, 8, 9)
-        self.assertEqual(9, r2.id)
+        self.assertEqual(r2.id, 9)
 
-    def test_width_private(self):
-        """ Check for privacy of width """
-        r2 = Rectangle(4, 5, 7, 8, 9)
-        with self.assertRaises(AttributeError):
-            r2.__width
+    def setUp(self):
+        self.rectangle = Rectangle(10, 5, 1, 1, 1)
 
-    def test_height_private(self):
-        """ Check for privacy of height """
-        r2 = Rectangle(4, 5, 7, 8, 9)
-        with self.assertRaises(AttributeError):
-            r2.__height
+    def test_init(self):
+        """ Test init """
+        self.assertEqual(self.rectangle.width, 10)
+        self.assertEqual(self.rectangle.height, 5)
+        self.assertEqual(self.rectangle.x, 1)
+        self.assertEqual(self.rectangle.y, 1)
+        self.assertEqual(self.rectangle.id, 1)
 
-    def test_x_private(self):
-        """ Check for privacy of x """
-        r2 = Rectangle(4, 5, 7, 8, 9)
-        with self.assertRaises(AttributeError):
-            r2.__x
+    def test_width_getter(self):
+        """ Test width getter """
+        self.assertEqual(self.rectangle.width, 10)
 
-    def test_y_private(self):
-        """ Check for privacy of y """
-        r2 = Rectangle(4, 5, 7, 8, 9)
-        with self.assertRaises(AttributeError):
-            r2.__y
+    def test_width_setter(self):
+        """ Test width setter """
+        self.rectangle.width = 5
+        self.assertEqual(self.rectangle.width, 5)
+
+    def test_height_getter(self):
+        """ Test height getter """
+        self.assertEqual(self.rectangle.height, 5)
+
+    def test_height_setter(self):
+        """ Test height setter """
+        self.rectangle.height = 3
+        self.assertEqual(self.rectangle.height, 3)
+
+    def test_x_getter(self):
+        """ Test x getter """
+        self.assertEqual(self.rectangle.x, 1)
+
+    def test_x_setter(self):
+        """ Test x setter """
+        self.rectangle.x = 2
+        self.assertEqual(self.rectangle.x, 2)
+
+    def test_y_getter(self):
+        """ Test y getter """
+        self.assertEqual(self.rectangle.y, 1)
+
+    def test_y_setter(self):
+        """ Test y setter """
+        self.rectangle.y = 3
+        self.assertEqual(self.rectangle.y, 3)
+
+    def test_area(self):
+        """ Test area """
+        self.assertEqual(self.rectangle.area(), 50)
+
+    def test_display(self):
+        """ Test display """
+        self.rectangle.display()
+
+    def test_str(self):
+        """ Test __str__ """
+        self.assertEqual(str(self.rectangle), '[Rectangle] (1) 1/1 - 10/5')
+
+    def test_update(self):
+        """ Test update """
+        self.rectangle.update(89, 5, 3, 4)
+        self.assertEqual(self.rectangle.id, 89)
+        self.assertEqual(self.rectangle.width, 5)
+        self.assertEqual(self.rectangle.height, 3)
+        self.assertEqual(self.rectangle.x, 4)
+        self.assertEqual(self.rectangle.y, 1)
+
+    def test_to_dict(self):
+        """ Test dict """
+        to_dict = self.rectangle.to_dictionary()
+        self.assertIn('x', to_dict)
+        self.assertIn('y', to_dict)
+        self.assertIn('id', to_dict)
+        self.assertIn('height', to_dict)
+        self.assertIn('width', to_dict)
 
 
 if __name__ == "__main__":
