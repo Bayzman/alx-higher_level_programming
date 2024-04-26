@@ -54,5 +54,6 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(AttributeError):
             Base().__nb_objects
 
+
 if __name__ == '__main__':
     unittest.main()

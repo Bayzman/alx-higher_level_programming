@@ -68,13 +68,6 @@ class TestRectangle_1st(unittest.TestCase):
         with self.assertRaises(ValueError):
             r4 = Rectangle(1, 2, 3, -4)
 
-    #def test_update(self):
-     #   """ Test update method """
-      #  r = Rectangle(1, 2)
-       # r.update(10, 15)
-        #self.assertEqual(r.width, 10)
-        #self.assertEqual(r.height, 15)
-
     def test_rect_from_base(self):
         """ Check for instances """
         self.assertIsInstance(Rectangle(4, 5), Base)
