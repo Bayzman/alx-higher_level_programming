@@ -6,65 +6,46 @@ from models.rectangle import Rectangle
 from models.base import Base
 
 
-class TestSquare_1st(unittest.TestCase):
+class TestSquare(unittest.TestCase):
+    """ Test cases """
     def setUp(self):
-        """ Setup method """
-        print("Testing Square")
+        self.square = Square(10, 1, 1, 1)
 
-    def test_width(self):
-        """ Test width """
-        s1 = Square(4, 5)
-        self.assertEqual(s1.size, 4)
+    def test_init(self):
+        self.assertEqual(self.square.size, 10)
+        self.assertEqual(self.square.x, 1)
+        self.assertEqual(self.square.y, 1)
+        self.assertEqual(self.square.id, 1)
 
-    def test_height(self):
-        """ Test height """
-        s1 = Square(4, 5)
-        self.assertEqual(s1.x, 5)
+    def test_size_getter(self):
+        self.assertEqual(self.square.size, 10)
 
-    def test_no_param(self):
-        """ Test no parameter """
-        with self.assertRaises(TypeError):
-            s2 = Square()
+    def test_size_setter(self):
+        self.square.size = 5
+        self.assertEqual(self.square.width, 5)
+        self.assertEqual(self.square.height, 5)
 
-    def test_1_param(self):
-        """ Test 1 parameter """
-        s3 = Square(3)
-        self.assertEqual(s3.size, 3)
+    def test_update(self):
+        self.square.update(89, 2, 3)
+        self.assertEqual(self.square.id, 89)
+        self.assertEqual(self.square.x, 2)
+        self.assertEqual(self.square.y, 3)
 
-    def test_rect_from_base(self):
-        """ Check for instances """
-        self.assertIsInstance(Square(4, 5), Base)
+    def test_update_kwargs(self):
+        self.square.update(size=5, x=4, y=5)
+        self.assertEqual(self.square.size, 5)
+        self.assertEqual(self.square.x, 4)
+        self.assertEqual(self.square.y, 5)
 
-    def test_x(self):
-        """ Test x """
-        s3 = Square(4)
-        self.assertEqual(s3.x, 0)
+    def test_to_dict(self):
+        to_dict = self.square.to_dictionary()
+        self.assertIn('id', to_dict)
+        self.assertIn('x', to_dict)
+        self.assertIn('size', to_dict)
+        self.assertIn('y', to_dict)
 
-    def test_x_2(self):
-        """ Test x again """
-        s3 = Square(4, 5)
-        self.assertEqual(s3.x, 5)
-
-    def test_y(self):
-        """ Test y """
-        s3 = Square(4, 5)
-        self.assertEqual(s3.y, 0)
-
-    def test_y_2(self):
-        """ Test y again """
-        s3 = Square(4, 5, 7)
-        self.assertEqual(s3.y, 7)
-
-    def test_all_param(self):
-        """ Test all parameters """
-        s3 = Square(4, 5, 7, 9)
-        self.assertEqual(9, s3.id)
-
-    def test_size_private(self):
-        """ Test for privacy """
-        r2 = Rectangle(4, 5, 7, 8)
-        with self.assertRaises(AttributeError):
-            r2.__size
+    def test_str(self):
+        self.assertEqual(str(self.square), '[Square] (1) 1/1 - 10')
 
     def test_x_private(self):
         """ Privacy test """
