@@ -12,6 +12,9 @@ class TestRectangle_1st(unittest.TestCase):
         r = Rectangle(4, 5)
         self.assertEqual(r.width, 4)
         self.assertEqual(r.height, 5)
+        r.update(10, 15)
+        self.assertEqual(r.width, 10)
+        self.assertEqual(r.height, 15)
 
     def test_2_param(self):
         """ Test two parameters """
