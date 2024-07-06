@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
 """ fetches https://alx-intranet.hbtn.io/status """
+from urllib.request import Request, urlopen
 
 
 def main():
     """ Main function """
-    from urllib.request import Request, urlopen
 
     req = Request('https://alx-intranet.hbtn.io/status')
     with urlopen(req) as response:
