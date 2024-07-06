@@ -5,9 +5,10 @@
 
 def main():
     """ Main function """
-    import urllib
+    from urllib.request import Request, urlopen
 
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
+    req = Request('https://alx-intranet.hbtn.io/status')
+    with urlopen(req) as response:
         html = response.read()
         print('Body response:')
         print('\t- type: {}'.format(type(html)))
