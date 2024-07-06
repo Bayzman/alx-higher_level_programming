@@ -8,8 +8,7 @@ import requests
 
 
 def main():
-    """ Main Function
-    """
+    """ Main Function """
     q = argv[1] if len(argv) > 1 else ""
     q_api = {'q': q}
 
@@ -17,7 +16,7 @@ def main():
     try:
         response_json = response.json()
         if response_json:
-            print("[{}] {}".format(response_json['id'], response_json['name']))
+            print(f"[{response_json['id']}] {response_json['name']}")
         else:
             print("No result")
     except Exception:
