@@ -4,12 +4,13 @@
     the response (decoded in utf-8).
 """
 from sys import argv
-from urllib import request, error
+from urllib import error
+from urllib.request import Request, urlopen
 
 
 def main():
     try:
-        with request.urlopen(argv[1]) as response:
+        with urlopen(argv[1]) as response:
             html = response.read()
             print(html.decode('utf-8'))
     except error.HTTPError as e:
