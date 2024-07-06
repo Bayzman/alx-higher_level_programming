@@ -4,12 +4,13 @@
     the value of the X-Request-Id variable found in the \
     header of the response.
 """
-import urllib
-from sys import argv
 
 
 def main():
     """ Main function """
+    import urllib
+    from sys import argv
+
     url = argv[1]
     request = urllib.request.Request(url)
     with urllib.request.urlopen(request) as response:
