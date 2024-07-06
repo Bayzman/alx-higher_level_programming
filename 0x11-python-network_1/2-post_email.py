@@ -7,7 +7,7 @@ from urllib import request, parse
 
 
 def main():
-    """Main function
+    """ Main function
     """
     url = argv[1]
     email = argv[2]
