@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 
+import urllib
 """ fetches https://alx-intranet.hbtn.io/status """
 
 
 def main():
     """ Main function """
-    import urllib
-
     with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
         html = response.read()
         print('Body response:')
