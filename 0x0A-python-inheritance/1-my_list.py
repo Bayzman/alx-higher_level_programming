@@ -11,4 +11,4 @@ class MyList(list):
 
         print(sorted(self))
 
-        return (self)
+        return (sorted(self))
