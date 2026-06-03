@@ -10,6 +10,6 @@ def is_same_class(obj, a_class):
         specified class, otherwise False
     """
 
-    result = isinstance(type(obj), a_class)
+    result = isinstance(obj, a_class)
 
     return result
