@@ -88,7 +88,7 @@ class Base:
                 [writer.writerow(obj.to_dictionary()) for obj in list_objs]
 
     @classmethod
-    def load_from_csv(cls):
+    def load_from_file_csv(cls):
         """ Load from csv file """
         filename = cls.__name__+'.csv'
         try:
